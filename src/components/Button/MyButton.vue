@@ -23,9 +23,13 @@ export default {
   border: none;
   padding: 8px 32px 8px 32px;
   border-radius: 8px;
+  background-color: #66BB6A;
+  font-size: 100%;
+  width: 256px;
+  height: 32px;
 }
 .my-button:hover {
-  background-color: #BDBDBD
+  background-color: #388E3C
 }
 .my-button:active {
   background-color: #757575
