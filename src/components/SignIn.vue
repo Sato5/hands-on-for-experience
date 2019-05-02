@@ -1,6 +1,6 @@
 <template>
   <div class="sign-up">
-    <router-link to="/signup">登録済みの方はこちらから</router-link>
+    <router-link to="/signup">未登録の方はこちらから</router-link>
     <my-form formMode="Sign In" @submit="receive"></my-form>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="user">
-    <p>{{user}}</p>
+    <p v-once>{{user}}</p>
     <my-button @click="logout">log out</my-button>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   },
   data () {
     return {
-      user: null
+      user: ''
     }
   },
   created () {
@@ -26,7 +26,13 @@ export default {
   methods: {
     userObj () {
       const auth = firebase.auth()
-      this.user = auth.currentUser.email || auth.currentUser.displayName
+      if (auth.currentUser.email) {
+        this.user = auth.currentUser.email
+      } else if (auth.currentUser.displayName) {
+        this.user = auth.currentUser.displayName
+      } else {
+        this.user = ''
+      }
     },
     logout () {
       myFirebase.logout()
